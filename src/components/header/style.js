@@ -18,7 +18,7 @@ export const LockBody = createGlobalStyle`
 `;
 export const Overlay = styled.div`
   background: rgba(0, 0, 0, 0.45);
-  height: 100vh;
+  height: 120vh;
   width: 100vw;
   position: fixed;
   top: 4.2rem;
@@ -101,7 +101,7 @@ export const Nav = styled.nav`
     ${({ showNav }) => (showNav ? "left: 0" : "left: -350px")};
     width: 100%;
     max-width: 350px;
-    height: calc(100vh - 2rem);
+    height: calc(120vh);
   }
 `;
 export const NavListItem = styled.li`
