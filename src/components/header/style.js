@@ -101,7 +101,7 @@ export const Nav = styled.nav`
     ${({ showNav }) => (showNav ? "left: 0" : "left: -350px")};
     width: 100%;
     max-width: 350px;
-    height: calc(100vh - 3.9rem);
+    height: calc(100vh - 2rem);
   }
 `;
 export const NavListItem = styled.li`
