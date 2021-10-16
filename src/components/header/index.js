@@ -22,11 +22,16 @@ import { ReactComponent as Logout } from "../../assets/icons/logout.svg";
 import { AiOutlineMenuUnfold } from "react-icons/ai";
 import * as ROUTES from "../../constants/routes";
 
-export default function Header({ restProps }) {
+export default function Header({ isAtTop, restProps }) {
   const [showNav, setShowNav] = useState(false);
+  const [changeBg, setChangeBg] = useState(false);
+
+  if(isAtTop) {
+    setChangeBg(true);
+  }
 
   return (
-    <Container {...restProps}>
+    <Container {...restProps} onClick={() => console.log(window.pageXOffset)} changeBg={changeBg}>
       <MenuIcon showNav={showNav}>
         <AiOutlineMenuUnfold size={35} onClick={() => setShowNav(!showNav)} />
       </MenuIcon>

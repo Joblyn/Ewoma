@@ -1,1 +1,10 @@
 export { default as Header } from './header';
+export { default as Hero } from './hero';
+export { default as About } from './about';
+export { default as Vendor } from './vendor';
+export { default as Benefits } from './benefits';
+export { default as Footer } from './footer';
+export { default as Profile } from './profile';
+export { default as Offers } from './offers';
+export { default as Account } from './account';
+export { default as GiftBit } from './giftcard-bitcoin';

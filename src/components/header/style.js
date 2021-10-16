@@ -17,7 +17,7 @@ export const LockBody = createGlobalStyle`
   } 
 `;
 export const Overlay = styled.div`
-  background: rgba(0,0,0,0.45);
+  background: rgba(0, 0, 0, 0.45);
   height: 100vh;
   width: 100vw;
   position: fixed;
@@ -31,7 +31,8 @@ export const Container = styled.div`
   top: 0;
   left: 0;
   padding: 1rem 8rem;
-  background: #fff;
+  background: ${({ changeBg }) => (changeBg ? "#46127b" : "#fff")};
+  color: ${({ changeBg }) => (changeBg ? "#ffffff" : "#000000")};
   border-radius: 0px 0px 1rem 0.85rem;
   display: flex;
   align-items: center;
@@ -70,7 +71,7 @@ export const Container = styled.div`
       font-size: 1.2rem;
 
       &:hover {
-       background: #eca408; 
+        background: #eca408;
       }
     }
   }
@@ -124,6 +125,8 @@ export const NavListItem = styled.li`
       display: none;
       position: absolute;
       z-index: 100;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0, 0.26),
+        0 2px 10px 0 rgba(0,0,0, 0.16);
     }
     &:hover {
       > .dropdown-container {
@@ -218,7 +221,6 @@ export const NavList = styled.ul`
     font-weight: bold;
     font-size: 1.2rem;
     line-height: 1.5rem;
-    color: #000000;
     cursor: pointer;
   }
   @media (max-width: 768px) {
