@@ -37,7 +37,10 @@ export const ImgContainer = styled.div`
   > img {
     margin-left: -30%;
     @media (max-width: 768px) {
-      transform: scale(0.8);
+      margin-top: 3rem;
+      margin-left: -45%;
+      width: 100%;
+      transform: scale(1.2);
     }
   }
   margin-bottom: 5rem;
