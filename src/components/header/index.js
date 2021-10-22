@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -22,32 +23,52 @@ import { ReactComponent as Logout } from "../../assets/icons/logout.svg";
 import { AiOutlineMenuUnfold } from "react-icons/ai";
 import * as ROUTES from "../../constants/routes";
 
-export default function Header({ isAtTop, restProps }) {
+export default function Header({ darkTheme, isAtTop, restProps }) {
   const [showNav, setShowNav] = useState(false);
   const [changeBg, setChangeBg] = useState(false);
+  const [buyDropdown, setBuyDropdown] = useState(false);
+  const [sellDropdown, setSellDropdown] = useState(false);
+  const [supportDropdown, setSupportDropdown] = useState(false);
+
+  const handleBuyDropdown = () => {
+    setBuyDropdown(!buyDropdown);
+    setSellDropdown(false);
+    setSupportDropdown(false);
+  };
+
+  const handleSellDropdown = () => {
+    setSellDropdown(!sellDropdown);
+    setBuyDropdown(false);
+    setSupportDropdown(false);
+  };  
+  const handleSupportDropdown = () => {
+    setSupportDropdown(!supportDropdown);
+    setSellDropdown(false);
+    setBuyDropdown(false);
+  };
 
   if(isAtTop) {
     setChangeBg(true);
   }
 
   return (
-    <Container {...restProps} onClick={() => console.log(window.pageXOffset)} changeBg={changeBg}>
-      <MenuIcon showNav={showNav}>
+    <Container {...restProps} changeBg={changeBg} darkTheme={darkTheme}>
+      <MenuIcon showNav={showNav} darkTheme={darkTheme}>
         <AiOutlineMenuUnfold size={35} onClick={() => setShowNav(!showNav)} />
       </MenuIcon>
       {showNav && <LockBody />}
       {showNav && <Overlay /> }
-      <Nav showNav={showNav}>
+      <Nav showNav={showNav} darkTheme={darkTheme}>
         <NavList>
-          <NavListItem>
+          <NavListItem darkTheme={darkTheme}>
             <span>
               <NavLink activeClassName="active" to={ROUTES.DASHBOARD}>
                 Dashboard
               </NavLink>
             </span>
           </NavListItem>
-          <NavListItem>
-            <span className="with-dropdown sell">
+          <NavListItem darkTheme={darkTheme} buyDropdown={buyDropdown}>
+            <span className="with-dropdown buy" onClick={handleBuyDropdown}>
               <div className="d-flex flex-row align-items-center">
                 <Link to="">Buy</Link> <Dropdown />
               </div>
@@ -63,7 +84,7 @@ export default function Header({ isAtTop, restProps }) {
                       </span>
                       <div>
                         <p>Sell Bitcoin</p>
-                        <p>Active offers: 0</p>
+                        <p className="faded">Active offers: 0</p>
                       </div>
                       <span>
                         <VectorRight />
@@ -80,7 +101,7 @@ export default function Header({ isAtTop, restProps }) {
                       </span>
                       <div>
                         <p>Sell Giftcards</p>
-                        <p>Vendor</p>
+                        <p className="faded">Vendor</p>
                       </div>
                       <span>
                         <VectorRight />
@@ -91,9 +112,10 @@ export default function Header({ isAtTop, restProps }) {
               </span>
             </span>
           </NavListItem>
-          <NavListItem>
+          <NavListItem darkTheme={darkTheme}
+          sellDropdown={sellDropdown}>
             <span className="with-dropdown sell">
-              <div className="d-flex flex-row align-items-center">
+              <div className="d-flex flex-row align-items-center" onClick={handleSellDropdown}>
                 <Link to="">Sell</Link>
                 <Dropdown />
               </div>
@@ -137,8 +159,8 @@ export default function Header({ isAtTop, restProps }) {
               </span>
             </span>
           </NavListItem>
-          <NavListItem>
-            <span className="with-dropdown support">
+          <NavListItem darkTheme={darkTheme} supportDropdown={supportDropdown}>
+            <span className="with-dropdown support" onClick={handleSupportDropdown}>
               <div className="d-flex flex-row align-items-center">
                 <Link to="">Support</Link> <Dropdown />
               </div>

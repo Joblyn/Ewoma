@@ -3,7 +3,7 @@ import { ReactComponent as Offer } from "../../assets/icons/offer.svg";
 import { Container, Link, OfferFunds, Text, Button } from "./style";
 import { Header } from "../about/style";
 
-export default function Offers() {
+export default function Offers({ darkTheme }) {
   const [active, setActive] = useState("sell");
 
   return (
@@ -25,7 +25,7 @@ export default function Offers() {
         </Link>
       </div>
 
-      <OfferFunds className="p-4 d-flex flex-column align-items-center justify-content-end text-center mb-5 w-100">
+      <OfferFunds className="p-4 d-flex flex-column align-items-center justify-content-end text-center mb-5 w-100" darkTheme={darkTheme}>
         <Offer />
         <Text>No Offer funds</Text>
         <span className="btn">Create New Offer</span>

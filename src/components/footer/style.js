@@ -1,4 +1,10 @@
-import styled from "styled-components/macro";
+import styled, { createGlobalStyle } from "styled-components/macro";
+
+export const Theme = createGlobalStyle`
+body {
+  ${({ darkTheme }) => darkTheme && "color: #fff; background: #000"};
+}
+`;
 
 export const Container = styled.section`
   padding: 10% 10% 8%;
@@ -17,12 +23,13 @@ export const CheckButton = styled.div`
     border-radius: 1.8rem;
     position: relative;
     cursor: pointer;
-    margin-right: .5rem;
+    margin-right: 0.5rem;
 
     .move {
       position: absolute;
       top: 0;
-      ${({ darkTheme }) => (darkTheme ? "left: 0" : "left: 100%; transform: translate(-100%, 0);")};
+      ${({ darkTheme }) =>
+        darkTheme ? "left: 0" : "left: 100%; transform: translate(-100%, 0);"};
       width: 1rem;
       height: 1rem;
       border-radius: 50%;
@@ -49,9 +56,11 @@ export const Ul = styled.ul`
 export const Item = styled.li`
   margin-bottom: 1rem;
   cursor: pointer;
-  transition: .15s font-weight ease;
+  transition: 0.15s font-weight ease;
   > svg {
-    width: 70;
+    @media (max-width: 768px) {
+      width: 120px;
+    }
   }
   &:hover {
     font-weight: bold;

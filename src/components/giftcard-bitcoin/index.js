@@ -22,7 +22,7 @@ import {
 } from "./style";
 import { FormControl } from "react-bootstrap";
 
-export default function GiftBit() {
+export default function GiftBit({ darkTheme }) {
   const [active, setActive] = useState("gift");
   return (
     <Container>
@@ -40,9 +40,9 @@ export default function GiftBit() {
           Bitcoin
         </Link>
       </div>
-      <Interface>
-        <Left className="d-flex flex-column">
-          <InputGroup className="d-flex flex-row justify-content-between align-items-center">
+      <Interface darkTheme={darkTheme}>
+        <Left className="d-flex flex-column" darkTheme={darkTheme}>
+          <InputGroup className="d-flex flex-row justify-content-between align-items-center" darkTheme={darkTheme}>
             <FormControl type="text" name="amount" placeholder="Enter amount" />
             <span>
               N <Dropdown />
@@ -60,7 +60,7 @@ export default function GiftBit() {
           </div>
           <Button type="first">Start</Button>
         </Left>
-        <Right className="d-flex flex-column">
+        <Right className="d-flex flex-column" darkTheme={darkTheme}>
           <Title>Giftcard</Title>
           <Balance>
             <Text>Current Balance</Text>
@@ -79,73 +79,75 @@ export default function GiftBit() {
           <Button>Withdraw</Button>
         </Right>
       </Interface>
-      <Transaction>
-        <div className="d-flex align-items-align-items-center justify-content-between header">
-          <span>Transaction of last month</span>
-          <span>Past trades</span>
-        </div>
-        <table>
-          <tbody>
-            <tr>
-              <td className="d-flex">
-                <img src={Profile1} alt="" />
-                <div className="d-flex flex-column align-items-center justify-content-center">
-                  <Name>Jahswill</Name>
-                  <Time>13:09pm</Time>
-                </div>
-              </td>
-              <td>itunes</td>
-              <td>2</td>
-              <td>$2000</td>
-              <td>Completed</td>
-            </tr>
-            <tr>
-              <td className="d-flex">
-                <img src={Profile2} alt="" />
-                <div className="d-flex flex-column align-items-center justify-content-center">
-                  <Name>Jahswill</Name>
-                  <Time>13:09pm</Time>
-                </div>
-              </td>
-              <td>itunes</td>
-              <td>2</td>
-              <td>$2000</td>
-              <td>Completed</td>
-            </tr>
-          </tbody>
-        </table>
-        <div className="date">20/09/2021</div>
-        <table>
-          <tbody>
-            <tr>
-              <td className="d-flex">
-                <img src={Profile1} alt="" />
-                <div className="d-flex flex-column align-items-center justify-content-center">
-                  <Name>Jahswill</Name>
-                  <Time>13:09pm</Time>
-                </div>
-              </td>
-              <td>itunes</td>
-              <td>2</td>
-              <td>$2000</td>
-              <td>Completed</td>
-            </tr>
-            <tr>
-              <td className="d-flex">
-                {/* <Profile2 /> */}
-                <img src={Profile2} alt="" />
-                <div className="d-flex flex-column align-items-center justify-content-center">
-                  <Name>Jahswill</Name>
-                  <Time>13:09pm</Time>
-                </div>
-              </td>
-              <td>itunes</td>
-              <td>2</td>
-              <td>$2000</td>
-              <td>Completed</td>
-            </tr>
-          </tbody>
-        </table>
+      <Transaction darkTheme={darkTheme}>
+        {/* <div> */}
+          <div className="d-flex align-items-align-items-center justify-content-between header">
+            <span>Transaction of last month</span>
+            <span>Past trades</span>
+          </div>
+          <table>
+            <tbody>
+              <tr>
+                <td className="d-flex">
+                  <img src={Profile1} alt="" />
+                  <div className="d-flex flex-column align-items-center justify-content-center">
+                    <Name>Jahswill</Name>
+                    <Time>13:09pm</Time>
+                  </div>
+                </td>
+                <td>itunes</td>
+                <td>2</td>
+                <td>$2000</td>
+                <td>Completed</td>
+              </tr>
+              <tr>
+                <td className="d-flex">
+                  <img src={Profile2} alt="" />
+                  <div className="d-flex flex-column align-items-center justify-content-center">
+                    <Name>Jahswill</Name>
+                    <Time>13:09pm</Time>
+                  </div>
+                </td>
+                <td>itunes</td>
+                <td>2</td>
+                <td>$2000</td>
+                <td>Completed</td>
+              </tr>
+            </tbody>
+          </table>
+          <div className="date">20/09/2021</div>
+          <table>
+            <tbody>
+              <tr>
+                <td className="d-flex">
+                  <img src={Profile1} alt="" />
+                  <div className="d-flex flex-column align-items-center justify-content-center">
+                    <Name>Jahswill</Name>
+                    <Time>13:09pm</Time>
+                  </div>
+                </td>
+                <td>itunes</td>
+                <td>2</td>
+                <td>$2000</td>
+                <td>Completed</td>
+              </tr>
+              <tr>
+                <td className="d-flex">
+                  {/* <Profile2 /> */}
+                  <img src={Profile2} alt="" />
+                  <div className="d-flex flex-column align-items-center justify-content-center">
+                    <Name>Jahswill</Name>
+                    <Time>13:09pm</Time>
+                  </div>
+                </td>
+                <td>itunes</td>
+                <td>2</td>
+                <td>$2000</td>
+                <td>Completed</td>
+              </tr>
+            </tbody>
+          </table>
+        {/* </div> */}
       </Transaction>
     </Container>
   );

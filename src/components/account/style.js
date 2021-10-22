@@ -28,7 +28,7 @@ export const Container = styled.section`
 export const Level = styled.div`
   width: 100%;
   height: 8rem;
-  border: .2rem solid #000000;
+  ${({ darkTheme }) => darkTheme ? "border: 0.1rem solid #fff" : "border: 0.1rem solid #000000"};
 `;
 export const Button = styled.button`
   display: flex;
@@ -51,13 +51,14 @@ export const Details = styled.div`
   width: 75%;
   padding: 2rem;
   height: 10rem;
-  border: .2rem solid #000000;
+  ${({ darkTheme }) => darkTheme ? "border: 0.1rem solid #fff" : "border: 0.1rem solid #000000"};
+  
   @media (max-width: 768px) {
     width: 100%;
   }
   > div {
-    width: 75%;
-    max-width: 700px;
+    width: 100%;
+    ${'' /* max-width: ; */}
     background: #ccafeb;
     border-radius: 1rem;
     border: .2rem solid #ccafeb;

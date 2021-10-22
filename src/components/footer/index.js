@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { ReactComponent as App } from "../../assets/images/app.svg";
 import { ReactComponent as Play } from "../../assets/images/play.svg";
 import { Container, CheckButton, Inner, Header, Ul, Item } from "./style";
 
-export default function Footer() {
-  const [darkTheme, setDarkTheme] = useState(false);
+export default function Footer({ darkTheme, setDarkTheme }) {
 
   return (
-    <Container>
+    <Container >
       <div>
         <CheckButton darkTheme={darkTheme}>
           <span className="parent" onClick={() => setDarkTheme(!darkTheme)}>

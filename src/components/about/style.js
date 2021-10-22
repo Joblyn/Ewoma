@@ -10,6 +10,11 @@ export const Header = styled.div`
   line-height: 4rem;
   text-align: center;
   margin-bottom: 5rem;
+
+  @media (max-width: 768px) {
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+  }
 `;
 export const TextContainer = styled.div`
   padding: 0 1rem;
@@ -34,8 +39,9 @@ export const Text = styled.div`
   }
 `;
 export const ImgContainer = styled.div`
-  img {
-    @media (max-width: 768px) {
+  @media (max-width: 768px) {
+    margin-top: -3rem;
+    img {
       transform: scale(0.7);
     }
   }

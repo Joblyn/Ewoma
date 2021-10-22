@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 
 export const Transaction = styled.div`
-  border: 0.2rem solid #000000;
+  ${({ darkTheme }) => darkTheme ? "border: 0.1rem solid #fff" : "border: 0.1rem solid #000000"};
   border-radius: 0.5rem;
   width: 100%;
   height: 30rem;
@@ -20,6 +20,12 @@ export const Transaction = styled.div`
      padding: 2rem 3rem 1rem 2rem;
      font-size:1.2rem;
      font-weight: bold;
+     ${'' /* display: flex;
+     justify-content: space-between; */}
+     @media (max-width: 768px) {
+       font-size: 1.1rem;
+      width: 500px;
+     }
   }  
   table {
     width: 100%;
@@ -42,6 +48,9 @@ export const Transaction = styled.div`
     padding: .5rem 1rem;
     font-size: 1.3rem;
     font-weight: bold;
+    @media (max-width: 768px) {
+    width: 500px;
+    }
   }
 `;
 export const Name = styled.span`
@@ -63,29 +72,43 @@ export const Link = styled.a`
   &.active {
     border-bottom: 0.2rem solid #feaf04;
   }
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
 `;
 export const Left = styled.div`
-  border-right: 1px solid #000000;
+  ${({ darkTheme }) => darkTheme ? "border-right: 0.1rem solid #fff" : "border-right: 0.1rem solid #000000"};
+@media(max-width: 768px) {
+  border-right: none;
+  ${({ darkTheme }) => darkTheme ? "border-bottom: 0.1rem solid #fff" : "border-bottom: 0.1rem solid #000000"};
+}
 `;
 export const Right = styled.div``;
 export const Interface = styled.div`
   display: flex;
-  border: 0.2rem solid #000000;
+  ${({ darkTheme }) => darkTheme ? "border: 0.1rem solid #fff" : "border: 0.1rem solid #000000"};
   border-radius: 0.5rem;
   width: 100%;
   min-height: 25rem;
   margin-bottom: 4rem;
+  @media(max-width: 768px) {
+    flex-direction: column;
+  }
 
   ${Left}, ${Right} {
     width: 50%;
     padding: 1rem;
+    @media(max-width: 768px) {
+      width: 100%;
+    }
   }
   ${Left} {
     padding-top: 5rem;
   }
 `;
 export const InputGroup = styled.div`
-  border: 1px solid #000000;
+  ${({ darkTheme }) => darkTheme ? "border: 1px solid #fff" : "border: 1px solid #000000"};
+
   padding: 0.5rem;
   input {
     font-size: 1.2rem;
@@ -95,16 +118,18 @@ export const InputGroup = styled.div`
     background: #fff;
     box-shadow: none!important;
     width: 100%;
+    ${({ darkTheme }) => darkTheme ? "background: #000!important; color: #fff!important" : "background: #fff; color: #000"};
     &::placeholder,
     ::-webkit-placeholder {
       font-size: 1.2rem;
       color: rgba(0, 0, 0, 0.5);
+      ${({ darkTheme }) => darkTheme ? "color: #fff;" : "color: rgba(0, 0, 0, 0.5)"};
     }
     &:target,
     &:focus, {
       border: 0 !important;
       box-shadow: none;
-      background: #fff;
+      ${({ darkTheme }) => darkTheme ? "color: #fff;" : "color: rgba(0, 0, 0, 0.5)"};
     }
   }
   > span {
@@ -119,6 +144,7 @@ export const InputGroup = styled.div`
     border-radius: 0.5rem;
     background: #e6d3f5;
     cursor: pointer;
+    ${({ darkTheme }) => darkTheme ? "color: #000;" : "color: inherit"};
     > svg {
       margin-left: .18rem;
     }

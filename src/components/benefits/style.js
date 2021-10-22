@@ -19,6 +19,11 @@ export const Header = styled.h3`
   line-height: 4rem;
   text-align: center;
   margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+  }
 `;
 export const BenefitsContainer = styled.div`
   margin-bottom: 2rem;
@@ -52,7 +57,8 @@ export const Button = styled.button`
   align-items: center;
   background: #feaf04;
   border-radius: 1rem;
-  width: 7rem;
+  width: 8rem;
+  padding: .122rem;
   height: 3.2rem;
   font-size: 1.2rem;
   line-height: 2rem;

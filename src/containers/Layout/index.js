@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Footer, Header } from "../../components";
 import { Container } from "./style";
 
-export default function Layout({ children, restProps }) {
+export default function Layout({ darkTheme, setDarkTheme, children, restProps }) {
   const [isAtTop, setIsAtTop] = useState(false);
 
   const childrenWithProps = React.Children.map(children, (child) => {
@@ -16,9 +16,9 @@ export default function Layout({ children, restProps }) {
 
   return (
     <Container {...restProps}>
-      <Header isAtTop={isAtTop} />
+      <Header isAtTop={isAtTop} darkTheme={darkTheme}/>
       <main>{childrenWithProps}</main>
-      <Footer />
+      <Footer darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>
     </Container>
   );
 }

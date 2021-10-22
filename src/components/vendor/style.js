@@ -20,6 +20,11 @@ export const Header = styled.h3`
   line-height: 4rem;
   text-align: center;
   margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+  }
 `;
 export const Text = styled.p`
   font-style: normal;

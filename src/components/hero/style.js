@@ -5,6 +5,8 @@ export const Container = styled.div`
   min-height: 100vh;
   background: #46127b;
   border-radius: 0px 0px 3rem 3rem;
+  margin-right: 0;
+  margin-left: 0;
 
   @media (max-width: 768px) {
     padding: 5rem 2rem; 

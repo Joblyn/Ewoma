@@ -12,7 +12,7 @@ import {
 
 export default function Benefits() {
   return (
-    <Container className="d-flex flex-column justify-content-center align-items-center">
+    <Container className="d-flex flex-column justify-content-center align-items-cente text-center">
       <Header>With Exowem you can</Header>
       <BenefitsContainer className="d-flex flex-column align-items-center justify-content-center">
         <BenefitItem className="d-flex flex-column align-items-center">
