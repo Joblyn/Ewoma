@@ -7,7 +7,11 @@ body {
 `;
 
 export const Container = styled.section`
-  padding: 10% 10% 8%;
+  padding: 10% 10% 0%;
+
+  @media (max-width: 992px) {
+    padding-top: 5rem;
+  };
 `;
 export const CheckButton = styled.div`
   width: fit-content;

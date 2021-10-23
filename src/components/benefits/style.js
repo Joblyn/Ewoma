@@ -1,11 +1,15 @@
 import styled from "styled-components/macro";
 
 export const Container = styled.section`
-  padding: 10% 10% 8%;
+  padding: 10% 10% 0%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 992px) {
+    padding-top: 5rem;
+  }
 
   h4 {
     font-size: 1.4rem;
@@ -26,18 +30,19 @@ export const Header = styled.h3`
   }
 `;
 export const BenefitsContainer = styled.div`
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
   width: 100%;
 
   @media (min-width: 769px) {
     .inner {
-      margin-top: -7rem;
+      margin-top: -2rem;
     }
   }
 `;
 export const BenefitItem = styled.div`
   width: 100%;
   max-width: 23rem;
+  padding: 0 0.75rem;
   svg {
     margin: 1.2rem;
   }
@@ -58,7 +63,7 @@ export const Button = styled.button`
   background: #feaf04;
   border-radius: 1rem;
   width: 8rem;
-  padding: .122rem;
+  padding: 0.122rem;
   height: 3.2rem;
   font-size: 1.2rem;
   line-height: 2rem;

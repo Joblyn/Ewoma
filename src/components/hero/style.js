@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 
 export const Container = styled.div`
-  padding: 12rem 10rem 0;
+  padding: 10% 10% 0;
   min-height: 100vh;
   background: #46127b;
   border-radius: 0px 0px 3rem 3rem;
@@ -15,6 +15,7 @@ export const Container = styled.div`
 export const TextContainer = styled.div`
   color: #ffffff;
   padding-top: 2rem;
+  margin-bottom: 2rem;
   > h3 {
     font-style: normal;
     font-weight: 900;
@@ -28,7 +29,6 @@ export const TextContainer = styled.div`
     font-style: normal;
     font-weight: normal;
     font-size: 1.2rem;
-    padding-left: 1rem;
     line-height: 1.8rem;
     width: 70%;
     margin-bottom: 6rem;
@@ -36,6 +36,7 @@ export const TextContainer = styled.div`
   @media (max-width: 768px) {
     p {
       width: 100%;
+      margin-bottom: 3rem;
     }
   }
 `;
@@ -52,6 +53,9 @@ export const Button = styled.button`
     background: #eca408;
     color: #46127b;
   }
+  @media(max-width: 992px) {
+    height: 5.7rem;
+  };
   @media(max-width: 768px) {
     width: 12rem;
     height: 5rem;

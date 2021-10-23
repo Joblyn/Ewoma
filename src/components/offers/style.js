@@ -1,7 +1,11 @@
 import styled from "styled-components/macro";
 
 export const Container = styled.section`
-  padding: 10% 10% 8%;
+  padding: 10% 10% 0%;
+
+  @media (max-width: 768px) {
+    padding: 5rem 10% 0%;
+  }
 `;
 export const Link = styled.a`
   font-style: normal;

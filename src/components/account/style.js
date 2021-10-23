@@ -1,8 +1,11 @@
 import styled from "styled-components/macro";
-// Container, Level, Button, Details, Text
 
 export const Container = styled.section`
-  padding: 10% 10% 8%;
+  padding: 10% 10% 0%;
+
+  @media (max-width: 768px) {
+    padding: 5rem 10% 0%;
+  }
 
   > div {
     display: flex;
@@ -19,16 +22,18 @@ export const Container = styled.section`
     width: 100%;
     margin-right: 5%;
     @media (max-width: 768px) {
-    margin-bottom: 2rem;
-      margin-right:0;
+      margin-bottom: 2rem;
+      margin-right: 0;
       width: 15rem;
-  }
+      align-items: flex-start;
+    }
   }
 `;
 export const Level = styled.div`
   width: 100%;
   height: 8rem;
-  ${({ darkTheme }) => darkTheme ? "border: 0.1rem solid #fff" : "border: 0.1rem solid #000000"};
+  ${({ darkTheme }) =>
+    darkTheme ? "border: 0.1rem solid #fff" : "border: 0.1rem solid #000000"};
 `;
 export const Button = styled.button`
   display: flex;
@@ -51,17 +56,17 @@ export const Details = styled.div`
   width: 75%;
   padding: 2rem;
   height: 10rem;
-  ${({ darkTheme }) => darkTheme ? "border: 0.1rem solid #fff" : "border: 0.1rem solid #000000"};
-  
+  ${({ darkTheme }) =>
+    darkTheme ? "border: 0.1rem solid #fff" : "border: 0.1rem solid #000000"};
+
   @media (max-width: 768px) {
     width: 100%;
   }
   > div {
     width: 100%;
-    ${'' /* max-width: ; */}
     background: #ccafeb;
     border-radius: 1rem;
-    border: .2rem solid #ccafeb;
+    border: 0.2rem solid #ccafeb;
     @media (min-width: 768px) {
       max-width: 1000px;
     }
@@ -69,7 +74,7 @@ export const Details = styled.div`
 `;
 export const Text = styled.p`
   margin: 0;
- ${({ type }) => {
+  ${({ type }) => {
     switch (type) {
       case "lg":
         return "font-size: 1.8rem; font-weight: bold";
@@ -83,5 +88,4 @@ export const Text = styled.p`
         return "font-size: 1.2rem";
     }
   }};
-
 `;

@@ -26,11 +26,12 @@ export const Overlay = styled.div`
   z-index: -1;
 `;
 export const Button = styled(ReactBootstrapButton)``;
-export const Container = styled.div`
+export const Container = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  padding: 1rem 8rem;
+  padding: 0.7rem 1rem 0.7rem 6rem;
+  box-shadow: 0 0.5rem 1rem rgb(70 18 123 / 13%);
   background: ${({ darkTheme }) => (darkTheme ? "#000" : "#fff")};
   color: ${({ darkTheme }) => (darkTheme ? "#ffffff" : "#000000")};
   border-radius: 0px 0px 0.85rem 0.85rem;
@@ -114,11 +115,10 @@ export const NavListItem = styled.li`
     position: relative;
     > div {
       svg {
+        width: 15px;
+        height: 15px;
         path {
-          ${({ darkTheme }) =>
-      darkTheme
-        ? "fill: white;"
-        : "fill: black;"};
+          ${({ darkTheme }) => (darkTheme ? "fill: white;" : "fill: black;")};
         }
       }
       a {
@@ -140,11 +140,15 @@ export const NavListItem = styled.li`
       z-index: 100;
       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26),
         0 2px 10px 0 rgba(0, 0, 0, 0.16);
-    }
-    &:hover {
-      > .dropdown-container {
-        display: block;
+
+      .dropdown-item:active {
+        background-color: #46127b61;
       }
+    }
+  }
+  &:hover {
+    .dropdown-container {
+      display: block;
     }
   }
   > .with-dropdown.sell {
@@ -162,8 +166,9 @@ export const NavListItem = styled.li`
       ${({ supportDropdown }) => supportDropdown && "display: block"};
     }
   }
-  > .with-dropdown.sell .dropdown-container, .with-dropdown.buy .dropdown-container {
-    top: 3.25rem;
+  > .with-dropdown.sell .dropdown-container,
+  .with-dropdown.buy .dropdown-container {
+    top: 3.2rem;
     width: fit-content;
     height: fit-content;
     ${({ darkTheme }) =>
@@ -191,11 +196,11 @@ export const NavListItem = styled.li`
         padding: 0.85rem;
         ${({ darkTheme }) => darkTheme && "color: #fff"};
         a div {
-          width: 6rem;
+          width: 8rem;
         }
         a span svg {
-          width: 2rem;
-          height: 2rem;
+          width: 1.8rem;
+          height: 1.8rem;
         }
         a span:last-of-type {
           svg {
@@ -211,8 +216,8 @@ export const NavListItem = styled.li`
           display: flex;
           flex-direction: column;
           justify-content: center;
-          align-items: center;
-          margin: 0 0.95rem;
+          align-items: flex-start;
+          padding: 0 .65rem;
           p {
             font-style: normal;
             font-weight: 600;
@@ -235,7 +240,7 @@ export const NavListItem = styled.li`
   }
 
   > .with-dropdown.support .dropdown-container {
-    top: 3.25rem;
+    top: 3.2rem;
     width: 220px;
     height: fit-content;
     ${({ darkTheme }) =>
@@ -243,7 +248,7 @@ export const NavListItem = styled.li`
         ? "background: #000; color: #fff"
         : "background: #fff; color: #000"};
     border-right: #c4c4c4 0.8rem solid;
-    padding: 2.5rem 1.2rem 2.5rem 1.2rem;
+    padding: 2.5rem 0rem;
     transform-origin: top left;
     transform: scale 0.2s ease-in-out;
 
@@ -254,17 +259,17 @@ export const NavListItem = styled.li`
 
     .dropdown-item {
       margin: 0.5rem 0;
-      font-weight: 500;
       font-size: 1.2rem;
       line-height: 2.3rem;
-      padding: 0.25rem 0;
-      font-weight: 400;
-      ${({ darkTheme }) =>
-      darkTheme
-        ? "color: #fff"
-        : "color: #000"};
+      padding: 0.25rem 1.2rem;
+      font-weight: 500;
+      ${({ darkTheme }) => (darkTheme ? "color: #fff" : "color: #000")};
       > a span {
         width: 2.7rem;
+        svg {
+          width: 1.8rem;
+          height: 1.8rem;
+        }
       }
     }
   }

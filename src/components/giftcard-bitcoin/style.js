@@ -6,9 +6,11 @@ export const Transaction = styled.div`
   width: 100%;
   height: 30rem;
   overflow: auto;
+  overflow-x: visible;
+
   &::-webkit-scrollbar {
     width: 4px;
-    height: 0px;
+    height: 4px;
     background: transparent;
   }
   &::-webkit-scrollbar-thumb {
@@ -61,7 +63,11 @@ export const Time = styled.span`
   opacity: 0.5;
 `;
 export const Container = styled.section`
-  padding: 10% 10% 8%;
+  padding: 10% 10% 0%;
+
+  @media (max-width: 768ppx) {
+    padding: 5rem 10% 0%;
+  }
 `;
 export const Link = styled.a`
   font-size: 1.3rem;

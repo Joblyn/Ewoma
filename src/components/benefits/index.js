@@ -23,7 +23,7 @@ export default function Benefits() {
             methods and buy with other users online.
           </p>
         </BenefitItem>
-        <div className="d-flex flex-column flex-md-row justify-content-between align-items-center w-100 inner">
+        <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-start align-items-center w-100 inner">
           <BenefitItem className="d-flex flex-column align-items-center">
             <Trade />
             <h5>Trade with secure</h5>
@@ -36,7 +36,7 @@ export default function Benefits() {
             <Wallet />
             <h5>Get a free wallet</h5>
             <p>
-              Get a Bitcoin wallet maintained by , the leading provider of
+              Get a Bitcoin wallet maintained by, the leading provider of
               secure Bitcoin wallets.
             </p>
           </BenefitItem>

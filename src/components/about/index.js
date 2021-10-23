@@ -8,7 +8,7 @@ export default function About() {
     <Container>
       <Header>About Us</Header>
       <div className="row d-flex justify-content-center align-items-center">
-        <TextContainer className="col-lg-6 col-md-6 col-sm-12">
+        <TextContainer className="col-lg-6 col-md-12 col-sm-12">
           <Text>
             <h3>Our Website</h3>
             <p>
@@ -28,7 +28,7 @@ export default function About() {
             </p>
           </Text>
         </TextContainer>
-        <ImgContainer className="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
+        <ImgContainer className="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-center align-items-center">
           <img src={AboutImg} alt="" />
         </ImgContainer>
       </div>

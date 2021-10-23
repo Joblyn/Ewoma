@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-  padding: 10% 10% 8%;
+  padding: 10% 10% 0%;
 `;
 export const Header = styled.div`
   font-style: normal;
@@ -9,11 +9,12 @@ export const Header = styled.div`
   font-size: 2.8rem;
   line-height: 4rem;
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
 
   @media (max-width: 768px) {
     font-size: 2.2rem;
     line-height: 2.6rem;
+    margin-bottom: 3rem;
   }
 `;
 export const TextContainer = styled.div`
@@ -33,7 +34,7 @@ export const Text = styled.div`
     font-weight: normal;
     font-size: 1.2rem;
     line-height: 1.8rem;
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
       text-align: center;
     }
   }

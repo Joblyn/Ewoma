@@ -40,27 +40,39 @@ export default function Header({ darkTheme, isAtTop, restProps }) {
     setSellDropdown(!sellDropdown);
     setBuyDropdown(false);
     setSupportDropdown(false);
-  };  
+  };
   const handleSupportDropdown = () => {
     setSupportDropdown(!supportDropdown);
     setSellDropdown(false);
     setBuyDropdown(false);
   };
 
-  if(isAtTop) {
+  if (isAtTop) {
     setChangeBg(true);
   }
 
+  const closeNavOnOutsideClick = () => {
+    if (showNav) {
+      setShowNav(false);
+    }
+  };
   return (
     <Container {...restProps} changeBg={changeBg} darkTheme={darkTheme}>
       <MenuIcon showNav={showNav} darkTheme={darkTheme}>
         <AiOutlineMenuUnfold size={35} onClick={() => setShowNav(!showNav)} />
       </MenuIcon>
       {showNav && <LockBody />}
-      {showNav && <Overlay /> }
+      {showNav && <Overlay onClick={closeNavOnOutsideClick} />}
       <Nav showNav={showNav} darkTheme={darkTheme}>
         <NavList>
-          <NavListItem darkTheme={darkTheme}>
+          <NavListItem darkTheme={darkTheme} onClick={() => setShowNav(false)}>
+            <span>
+              <NavLink exact activeClassName="active" to={ROUTES.HOME}>
+                Home
+              </NavLink>
+            </span>
+          </NavListItem>
+          <NavListItem darkTheme={darkTheme} onClick={() => setShowNav(false)}>
             <span>
               <NavLink activeClassName="active" to={ROUTES.DASHBOARD}>
                 Dashboard
@@ -72,7 +84,10 @@ export default function Header({ darkTheme, isAtTop, restProps }) {
               <div className="d-flex flex-row align-items-center">
                 <Link to="">Buy</Link> <Dropdown />
               </div>
-              <span className="dropdown-container">
+              <span
+                className="dropdown-container"
+                onMouseLeave={() => setBuyDropdown(false)}
+              >
                 <ul>
                   <li className="dropdown-item">
                     <Link
@@ -112,14 +127,19 @@ export default function Header({ darkTheme, isAtTop, restProps }) {
               </span>
             </span>
           </NavListItem>
-          <NavListItem darkTheme={darkTheme}
-          sellDropdown={sellDropdown}>
+          <NavListItem darkTheme={darkTheme} sellDropdown={sellDropdown}>
             <span className="with-dropdown sell">
-              <div className="d-flex flex-row align-items-center" onClick={handleSellDropdown}>
+              <div
+                className="d-flex flex-row align-items-center"
+                onClick={handleSellDropdown}
+              >
                 <Link to="">Sell</Link>
                 <Dropdown />
               </div>
-              <span className="dropdown-container">
+              <span
+                className="dropdown-container"
+                onMouseLeave={() => setSellDropdown(false)}
+              >
                 <ul>
                   <li className="dropdown-item">
                     <Link
@@ -160,11 +180,17 @@ export default function Header({ darkTheme, isAtTop, restProps }) {
             </span>
           </NavListItem>
           <NavListItem darkTheme={darkTheme} supportDropdown={supportDropdown}>
-            <span className="with-dropdown support" onClick={handleSupportDropdown}>
+            <span
+              className="with-dropdown support"
+              onClick={handleSupportDropdown}
+            >
               <div className="d-flex flex-row align-items-center">
                 <Link to="">Support</Link> <Dropdown />
               </div>
-              <span className="dropdown-container">
+              <span
+                className="dropdown-container"
+                onMouseLeave={() => setSupportDropdown(false)}
+              >
                 <ul>
                   <li className="dropdown-item">
                     <Link
@@ -218,8 +244,8 @@ export default function Header({ darkTheme, isAtTop, restProps }) {
       </Nav>
 
       <div className="d-flex flex-md-row justify-content-md-center align-items-center ml-auto buttons-container">
-        <Link to="">Sign in</Link>
-        <Button className="d-flex justify-content-center align-items-center">
+        <Link to={ROUTES.SIGNIN}>Sign in</Link>
+        <Button className="d-flex justify-content-center align-items-center" href={ROUTES.SIGNUP}>
           Sign up
         </Button>
       </div>

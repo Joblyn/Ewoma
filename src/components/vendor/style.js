@@ -2,7 +2,7 @@ import styled from "styled-components/macro";
 
 
 export const Container = styled.section`
-  padding: 10% 10% 8%;
+  padding: 10% 10% 0%;
   display: flex;
   flex-direction: column;
   justify-content: center;
