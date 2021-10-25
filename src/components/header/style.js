@@ -73,6 +73,7 @@ export const Container = styled.header`
 
       &:hover {
         background: #eca408;
+        color: #46127b;
       }
     }
   }
