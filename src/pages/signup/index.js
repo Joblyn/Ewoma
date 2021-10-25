@@ -62,6 +62,7 @@ export default function Signup({ darkTheme, restProps }) {
                 darkTheme={darkTheme}
                 type="text"
                 name="name"
+                placeholder="Enter full name"
                 required
               />
             </FormGroup>
@@ -71,6 +72,7 @@ export default function Signup({ darkTheme, restProps }) {
                 darkTheme={darkTheme}
                 type="text"
                 name="number"
+                placeholder="Enter number"
                 required
               />
             </FormGroup>
@@ -80,6 +82,7 @@ export default function Signup({ darkTheme, restProps }) {
                 darkTheme={darkTheme}
                 type="email"
                 name="email"
+                placeholder="Enter email"
                 required
               />
             </FormGroup>

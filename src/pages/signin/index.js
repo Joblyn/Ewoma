@@ -62,6 +62,7 @@ export default function Signin({ darkTheme, restProps }) {
                 darkTheme={darkTheme}
                 type="email"
                 name="email"
+                placeholder="Enter email"
                 required
               />
             </FormGroup>
