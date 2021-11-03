@@ -5,6 +5,7 @@ import * as ROUTES from "./constants/routes";
 import { Dashboard, Landing, Signin, Signup } from "./pages";
 import Layout from "./containers/Layout";
 import { GlobalStyle } from "./globalStyle";
+import "./utils/otp.js";
 
 function App() {
   const [darkTheme, setDarkTheme] = useState(false);

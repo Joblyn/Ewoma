@@ -24,7 +24,7 @@ export const Container = styled.div`
     > .line {
       position: absolute;
       height: 7rem;
-      width: 0.2rem;
+      width: 0.1rem;
       background-color: #46127b;
       &:nth-of-type(3) {
         top: 0;

@@ -17,12 +17,21 @@ import { ReactComponent as Google } from "../../assets/icons/google.svg";
 import { ReactComponent as Pword } from "../../assets/icons/password.svg";
 import { NavLink, Link } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
+import VerificationModal from "../../components/modals/verifications";
 
 export default function Signin({ darkTheme, restProps }) {
   const [passwordView, setPasswordView] = useState(false);
+  const [verificationModal, setVerificationModal] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setVerificationModal(true);
+  }
+
 
   return (
     <Container {...restProps} darkTheme={darkTheme}>
+      <VerificationModal verificationModal={verificationModal} setVerificationModal={setVerificationModal} />
       <Aside>
         <Text>
           <h3>Buy and Sell</h3>
@@ -55,7 +64,7 @@ export default function Signin({ darkTheme, restProps }) {
             <div className="or">Or</div>
             <div />
           </div>
-          <Form id="signup" darkTheme={darkTheme}>
+          <Form id="signup" darkTheme={darkTheme} onSubmit={handleSubmit}>
             <FormGroup>
               <Label>Email</Label>
               <FormInput

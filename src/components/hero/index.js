@@ -1,18 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Container, TextContainer, Button, ImgContainer } from "./style";
 import { ReactComponent as HeroImg } from "../../assets/images/hero.svg";
+import * as ROUTES from '../../constants/routes';
 
 export default function Hero({ setIsAtTop, ...restProps }) {
-  useEffect(() => {
-    // const ref = document.getElementById("reference");
-    // console.log(ref);
-    // const rect = ref.getBoundingClientRect();
-    // if (rect.top <= 30) {
-    //   setIsAtTop(true);
-    // } else {
-    //   setIsAtTop(false);
-    // }
-  }, []);
 
   return (
     <Container {...restProps} className="row">
@@ -22,7 +13,7 @@ export default function Hero({ setIsAtTop, ...restProps }) {
           We trade with different Giftcard And deal with bitcoin at different
           rate.
         </p>
-        <Button>Get Started</Button>
+        <Button href={ROUTES.SIGNIN}>Get Started</Button>
       </TextContainer>
       <ImgContainer className="col-md-6 col-sm-12 col-lg-6 mb-md-5">
         <HeroImg />
